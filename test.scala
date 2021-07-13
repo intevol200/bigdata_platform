@@ -48,7 +48,7 @@ var message = "hello scala"
 
 // COMMAND ----------
 
-val movies = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv")
+val movies = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv")
 println(movies.count())
 println(movies.first())
 movies.take(2)
@@ -60,7 +60,7 @@ action_movies.count()
 
 // COMMAND ----------
 
-val movies = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv")
+val movies = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv")
 val movieInfo = movies.map(movie => movie.split(','))
 val mi = movieInfo.take(2)
 val m = movies.take(2)
@@ -112,14 +112,14 @@ sc.parallelize(List(1,2,3,2,4,2,1,4,3,5)).countByValue()
 
 // COMMAND ----------
 
-// movieInfo.map(x => x(1)).saveAsTextFile("/FileStore/shared_uploads/intevol200@gmail.com/outputs")
-display(dbutils.fs.ls("/FileStore/shared_uploads/intevol200@gmail.com/outputs"))
+// movieInfo.map(x => x(1)).saveAsTextFile("/FileStore/shared_uploads/oooooooooo@gmail.com/outputs")
+display(dbutils.fs.ls("/FileStore/shared_uploads/oooooooooo@gmail.com/outputs"))
 
 // COMMAND ----------
 
-val movies = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv")
+val movies = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv")
 println(movies.partitions.length)
-val moviesRepart = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv", 10)
+val moviesRepart = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv", 10)
 println(moviesRepart.partitions.length)
 val repartitionedMovies = moviesRepart.repartition(4)
 println(repartitionedMovies.partitions.length)
@@ -149,7 +149,7 @@ val cg = rdd1.cogroup(rdd2).collect
 
 // COMMAND ----------
 
-val movies = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv")
+val movies = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv")
 val movieInfo = movies.map(movie => movie.split(','))
 val genres = movieInfo.flatMap(mi => mi(2).split('|'))
 val genreOne = genres.map(g => (g, 1))
@@ -176,5 +176,5 @@ val swCbv = input.flatMap(line => line.split(" ")).filter(x => !stop_words.value
 // COMMAND ----------
 
 import org.apache.spark.storage.StorageLevel
-val moviesPersist = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv").persist(StorageLevel.MEMORY_ONLY)
-val moviesCache = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv").cache()
+val moviesPersist = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv").persist(StorageLevel.MEMORY_ONLY)
+val moviesCache = sc.textFile("/FileStore/shared_uploads/oooooooooo@gmail.com/movies.csv").cache()
