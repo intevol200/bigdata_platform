@@ -1,5 +1,5 @@
 // Databricks notebook source
-val movies = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/movies.csv")
+val movies = sc.textFile("/FileStore/shared_uploads/-------@gmail.com/movies.csv")
 val mfirstRow = movies.first()
 val mData = movies.filter(row => row != mfirstRow)
 val movieInfo = mData.map(movie => movie.split(',')).map(mi => (mi(1), mi(2).split('|')))
@@ -16,7 +16,7 @@ deleteYear.takeSample(false, 10)
 
 // COMMAND ----------
 
-val tags = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/tags.csv")
+val tags = sc.textFile("/FileStore/shared_uploads/-------@gmail.com/tags.csv")
 val tfirstRow = tags.first()
 val tData = tags.filter(row => row != tfirstRow)
 
@@ -27,7 +27,7 @@ tagCounter.takeOrdered(1)(Ordering[Int].reverse.on(x => x._2))
 
 // COMMAND ----------
 
-val ratings = sc.textFile("/FileStore/shared_uploads/intevol200@gmail.com/ratings.csv")
+val ratings = sc.textFile("/FileStore/shared_uploads/-------@gmail.com/ratings.csv")
 val rfirstRow = ratings.first()
 val rData = ratings.filter(row => row != rfirstRow)
 val rateInfo = rData.map(rating => rating.split(',')).map(ri => (ri(1), ri(2).toFloat))
