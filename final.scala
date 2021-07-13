@@ -39,7 +39,7 @@ depart.map(x => (x, 1)).reduceByKey(_+_).filter(_._2 > least).sortBy(_._2, false
 // COMMAND ----------
 
 // 7. HDFS에 저장하지 않고 S3에 저장된 채로 1번 문제 풀기
-val s3 = sc.textFile("s3://leeky-us-east-1-share/bigdata-input.txt")
+val s3 = sc.textFile("s3://OOOOO-us-east-1-share/bigdata-input.txt")
 val s3count = s3.map(x => x.split('\t'))
 s3count.map(x => x(0)).count()
 
@@ -47,7 +47,7 @@ s3count.map(x => x(0)).count()
 
 // PageRank Algorithm
 val iters = 3
-val lines = sc.textFile("s3://leeky-us-east-1-share/bigdata-input.txt").cache()
+val lines = sc.textFile("s3://OOOOO-us-east-1-share/bigdata-input.txt").cache()
 val roads = lines.map(s => {
 val splited = s.split("\t")
 (splited(0), splited(1))
